@@ -3,6 +3,8 @@
 [![Bower version](https://badge.fury.io/bo/angular-vumeter.svg)](https://badge.fury.io/bo/angular-vumeter)
 [![Build Status](https://travis-ci.org/matteovinci/angular-vumeter.svg?branch=master)](https://travis-ci.org/matteovinci/angular-vumeter)
 
+![VU meter demo preview](https://matteovinci.github.io/angular-vumeter/demo/assets/vu-meter-demo-preview.png)
+
 ### Quick links
 - [Demo](#demo)
 - [Getting started](#installation)
