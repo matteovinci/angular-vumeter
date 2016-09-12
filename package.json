@@ -21,10 +21,10 @@
     "css3",
     "svg"
   ],
-    "author": {
-        "email": "matteovinci88@gmail.com",
-        "name": "Matteo Vinci"
-    },
+  "author": {
+    "email": "matteovinci88@gmail.com",
+    "name": "Matteo Vinci"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/matteovinci/angular-vumeter/issues"
@@ -40,6 +40,8 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.0.2",
     "karma-mocha-reporter": "^2.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "phantomjs-prebuilt": "^2.1.12",
     "uglifyjs": "^2.4.10"
   }
 }

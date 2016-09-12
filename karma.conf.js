@@ -22,7 +22,8 @@ module.exports = function (karma) {
         plugins: [
             'karma-jasmine',
             'karma-chrome-launcher',
-            'karma-mocha-reporter'
+            'karma-mocha-reporter',
+            'karma-phantomjs-launcher'
         ],
 
         logLevel: 'WARN',

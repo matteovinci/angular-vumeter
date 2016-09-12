@@ -10,6 +10,6 @@ gulp.task('default', function(done) {
         configFile: __dirname + '/karma.conf.js',
         singleRun: false,
         autoWatch: true,
-        browsers : ['Chrome']
+        browsers : ['PhantomJS']
     }, done).start();
 });
