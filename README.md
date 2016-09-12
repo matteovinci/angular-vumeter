@@ -1,5 +1,6 @@
 ### angular-vumeter - [AngularJS](http://angularjs.org/) directive representing a VU meter
 [![npm version](https://badge.fury.io/js/angular-vumeter.svg)](https://badge.fury.io/js/angular-vumeter)
+[![Bower version](https://badge.fury.io/bo/angular-vumeter.svg)](https://badge.fury.io/bo/angular-vumeter)
 
 ### Quick links
 - [Demo](#demo)
@@ -55,7 +56,7 @@ angular.module('myModule', ['angular-vumeter']);
 By default the vumeter will be active as soon as the page is loaded and it will use microphone as default input.
 You can activate/deactivate VU meter defining the `isActive` attribute:
 ```js
-<vu-meter is-active="isActive"></vu-meter></div>
+<vu-meter is-active="isActive"></vu-meter>
 ```
 
 ## VU meter using an audio source
