@@ -1,0 +1,23 @@
+{
+  "name": "angular-vumeter-demo",
+  "version": "1.0.0",
+  "description": "A demo web application for angular-vumeter",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8001",
+    "build-js": "browserify ./scripts/browserify-main.js > ./scripts/includes.js --insert-globals",
+    "build-js-min": "browserify ./scripts/browserify-main.js | uglifyjs > ./scripts/includes.min.js --insert-globals"
+  },
+  "author": "matteovinci",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-highlightjs": "^0.6.2",
+    "angular-ui-router": "^0.3.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "http-server": "^0.9.0",
+    "uglify": "^0.1.5"
+  }
+}

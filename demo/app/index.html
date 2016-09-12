@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HTML5 + SVG Vu Meter</title>
+        <script src="../scripts/includes.min.js"></script>
+        <script src="modules.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers/main.ctrl.js"></script>
+        <script src="../lib/angular-vumeter/angular-vumeter.min.js"></script>
+        <!-- Highlight js -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+
+        <!-- Custom-->
+        <link href="../lib/angular-vumeter/angular-vumeter.min.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <ui-view></ui-view>
+        <script>
+            window.config = {
+                templatePath: '../app/templates/',
+                nodeModulesPath: '../node_modules/'
+            };
+        </script>
+    </body>
+</html>

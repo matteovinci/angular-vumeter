@@ -1,0 +1,164 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: url('../images/background.png') repeat;
+    color: #fff;
+    text-align: center;
+}
+
+.wrapper:last-of-type {
+    margin-bottom: 20px;
+}
+
+.wrapper.default {
+    text-align: left;
+    background-color: #f0f0f0;
+    padding: 1em 2em;
+    margin-top: 2em;
+    color: #333;
+}
+
+.sub {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.sub p {
+    font-size: 1.5em;
+}
+
+h1, h4 {
+    text-shadow: 2px 2px #333;
+}
+
+.unsupported-browser {
+    color: #333;
+    padding: 2em;
+    font-size: 1.2em;
+    margin-top: 2em;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin-top: 0;
+    text-shadow: 1px 1px #333
+}
+
+.tips {
+    font-size: 1.3em;
+    font-weight: lighter;
+    margin: 20px auto;
+}
+
+.snippet {
+    margin: 10px auto;
+}
+
+pre.inline {
+    display: inline-block;
+    margin: 0;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+.tryMe {
+    position: relative;
+    padding-top: 35px;
+}
+
+.tryMe img {
+    position: absolute;
+    top: -35px;
+    right: calc(50% + 60px);
+    transform: rotate(100deg) scale(-1, 1);
+}
+
+.tryMe span {
+    display: block;
+    position: absolute;
+    top: -20px;
+    right: calc(50% + 100px);
+    white-space: nowrap;
+    overflow: hidden;
+    font-style: italic;
+}
+
+/* Created with proto.io https://proto.io/freebies/onoff/ */
+
+.onoffswitch {
+    margin: 10px auto;
+    position: relative;
+    width: 90px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999;
+    border-radius: 20px;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #2467e2;
+    color: #fff;
+}
+
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #eee;
+    color: #999999;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block;
+    width: 21px;
+    margin: 4.5px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 56px;
+    border: 2px solid #999;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}

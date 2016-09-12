@@ -1,0 +1,49 @@
+.vu-view {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1em solid #4a3c2d;
+    border-radius: 5px;
+    position: relative;
+}
+
+vu-meter .vu-case {
+    border-width: 1em;
+    border-style: solid;
+
+    -webkit-box-shadow: inset 13px 13px 30px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 13px 13px 30px 0px rgba(0,0,0,0.5);
+    box-shadow: inset 13px 13px 30px 0px rgba(0,0,0,0.5);
+    background-color: #D8BC86;
+    border-top-color: #3A2B20;
+    border-right-color: #775943;
+    border-bottom-color: #3A2B20;
+    border-left-color: #775943;
+}
+
+/* Adjusting svg margin bottom */
+vu-meter .vu-case > div {
+    margin-bottom: -6px;
+}
+
+.vu-credits {
+    cursor: pointer;
+    position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.5em;
+    bottom: 20px;
+    right: 20px;
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none;
+    background: #333333;
+    background: -moz-linear-gradient(-45deg, #333333 0%, #333333 50%, #444444 51%, #444444 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #333333), color-stop(50%, #333333), color-stop(51%, #444444), color-stop(100%, #444444));
+    background: -webkit-linear-gradient(-45deg, #333333 0%, #333333 50%, #444444 51%, #444444 100%);
+    background: -o-linear-gradient(-45deg, #333333 0%, #333333 50%, #444444 51%, #444444 100%);
+    background: -ms-linear-gradient(-45deg, #333333 0%, #333333 50%, #444444 51%, #444444 100%);
+    background: linear-gradient(135deg, #333333 0%, #333333 50%, #444444 51%, #444444 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#444444', GradientType=1 );
+}

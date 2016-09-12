@@ -1,0 +1,146 @@
+<div class="col-sm-6 col-md-5">
+    <div ng-if="!supportedBrowser" class="unsupported-browser bg-danger">
+        <span>Your browser doesn't support <code>getMediaStream</code> API</span>
+        <spam>You can check its global support <a href="http://caniuse.com/#feat=stream">here</a></spam>
+    </div>
+    <h1>angular-vumeter</h1>
+    <h3 class="subtitle">A VU meter component for Angular</h3>
+    <div class="wrapper">
+        <vu-meter is-active="isActiveMic"></vu-meter>
+        <h4>- VU meter with microphone as input</h4>
+        <!-- Created with proto.io https://proto.io/freebies/onoff/ -->
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="vumeterMicSwitch" ng-model="isActiveMic"/>
+            <label class="onoffswitch-label" for="vumeterMicSwitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
+        <div class="tryMe">
+            <img src="./images/arrow.png" width="30"/>
+            <span>Turn me on <br/>and talk in the microphone!</span>
+        </div>
+    </div>
+    <div class="wrapper">
+        <vu-meter is-active="isActive" source-id="mySong"></vu-meter>
+        <h4>- VU meter with other audio source (e.g. mp3, ogg, etc.)</h4>
+        <!-- Created with proto.io https://proto.io/freebies/onoff/ -->
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="vumeterSwitch" ng-model="isActive"/>
+            <label class="onoffswitch-label" for="vumeterSwitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
+        <div class="tryMe">
+            <img src="./images/arrow.png" width="30"/>
+            <span>Turn me on </br>and play song!</span>
+        </div>
+        <audio id="mySong" controls>
+            <source src="./assets/kevin_MacLeod-Slow_Burn.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <p class="tips"><strong>TIP</strong>: It's important to note that this works with Chrome with the <strong>--enable-media-stream</strong>
+        flag set, Firefox nightly and Opera 12. If not enabled, in Chrome type 'chrome://flags' in your address bar.
+        Find 'Enable MediaStream' and enable it.</p>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc/3.0/deed.it">
+        <img alt="Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png"/>
+    </a>
+</div>
+<div class="col-sm-6 col-md-7">
+    <div class="wrapper default">
+        <h2>Getting started</h2>
+        <h3>Install with NPM</h3>
+        <div class="snippet" hljs>npm install angular-vumeter</div>
+        <h3>Install with Bower</h3>
+        <div class="snippet" hljs>bower install angular-vumeter</div>
+        <span>When you are done downloading all the dependencies and project files the only remaining part is to add dependencies on the `angular-vumeter` module: </span>
+        <div class="snippet" hljs>angular.module('myModule', ['angular-vumeter']);</div>
+        <span>Include js and css</span>
+        <div class="snippet" hljs>
+<script src="../node_modules/angular-vumeter/dist/angular-vumeter.min.js"></script>
+<link href="../node_modules/angular-vumeter/dist/angular-vumeter.min.css" rel="stylesheet" type="text/css" >
+    </div>
+
+        <h2>VU meter using the microphone input</h2>
+        <div class="snippet" hljs><vu-meter></vu-meter></div>
+        <span>By default the vumeter will be active as soon as the page is loaded and it will use microphone as default input.</span>
+        <span>You can activate/deactivate VU meter defining the <pre class="inline">isActive</pre> attribute:</span>
+        <div class="snippet" hljs><vu-meter is-active="isActive"></vu-meter></div>
+
+        <h2>VU meter using an audio source</h2>
+        <div class="snippet" hljs>
+<vu-meter is-active="isActive" source-id="mySong"></vu-meter>
+<audio id="mySong" controls="true">
+    <source src="./assets/kevin_MacLeod-Slow_Burn.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio></div>
+
+        <h2>Custom templates</h2>
+        <span>By default the directive will show an svg template. This is inspired to the old analogic VU meter by TEAC corporation.</span>
+        <span>You can download the original illustrator file of the svg template and customize it (<a href="../assets/vumeter.ai">vumeter.ai</a>).</span>
+        <br/>
+        <span>Using <pre class="inline">vuMeterConfig</pre> provider you can register a new template with you own logic:</span>
+        <div class="snippet" hljs>vuMeterConfig.registerTemplate('myCustomTemplate', {
+    path: 'path/to/html/or/svg/template',
+    /**
+    * Optional: This method is run only once. Function to find
+    * elements before execution of the onDraw function.
+    * It can be useful to find elements of the template that
+    * need to be accessed multiple times during onDraw
+    */
+    getTemplateElements: function($element) {
+        return [];
+    },
+    /**
+    * Required: This method is run every 1024 audio samples.
+    * Any manipolation of DOM to show audio visualization should be included here
+    */
+    onDraw: function($element, volume, templateElements) {}
+}
+        </div>
+            This is the implementation for the default template:</span>
+        <div class="snippet" hljs>{
+    path: 'angular-vumeter/template/angular-vumeter.svg',
+    getTemplateElements: function($element) {
+        // let's find motion elements in svg knowing their types and ids
+        function findElementInSVG(type, id) {
+            var elements = $element.find(type);
+            for (var i = 0; i < elements.length; i++) {
+                var el = elements[i];
+                if (el.id === id) {
+                    return el;
+                }
+            }
+        }
+        // trigger is a g element
+        var trigger = findElementInSVG('g', 'trigger');
+        // peak is a ellipse element
+        var peak = findElementInSVG('ellipse', 'peak');
+        return [angular.element(trigger), angular.element(peak)];
+    },
+    onDraw: function($element, volume, templateElements) {
+        // this is relative to the original system of coordinates of the template
+        var rotationPivot = {
+            x: 292,
+            y: 331
+        };
+
+        // Let's get template elements calculated only once (not on every onDraw iteration)
+        var trigger = templateElements[0];
+        var led = templateElements[1];
+
+        var minAngle = 65, maxAngle = 100;
+        // Transform volume in a visual data
+        var deg = Math.min((minAngle * volume) / 100, maxAngle);
+        // Trigger rotation
+        trigger.attr('transform', 'rotate(' + deg + ' ' + rotationPivot.x + ' ' + rotationPivot.y + ')');
+        // Led blinking
+        led.attr('fill', volume > 100 ? '#ea2b2c' : '#992B2C');
+    }
+}
+        </div>
+    <span>You can create simpler or more complex audio visualization using html or svg templates</span>
+    </div>
+</div>

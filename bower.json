@@ -1,0 +1,26 @@
+{
+  "name": "angular-vumeter",
+  "description": "A customizable AngularJS directive representing a VU meter",
+  "main": "index.js",
+  "authors": [
+    "Matteo Vinci <matteovinci88@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "vu",
+    "meter",
+    "angular",
+    "html5",
+    "css3",
+    "svg"
+  ],
+  "homepage": "https://github.com/matteovinci/angular-vumeter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo"
+  ]
+}

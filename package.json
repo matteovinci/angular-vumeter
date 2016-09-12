@@ -1,0 +1,45 @@
+{
+  "name": "angular-vumeter",
+  "version": "0.0.4",
+  "description": "A customizable AngularJS directive representing a VU meter",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp",
+    "minify": "npm run minify-js && npm run minify-css",
+    "minify-js": "uglifyjs dist/angular-vumeter.js -o dist/angular-vumeter.min.js -m --lint --comments -c",
+    "minify-css": "cleancss -o dist/angular-vumeter.min.css dist/angular-vumeter.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteovinci/angular-vumeter.git"
+  },
+  "keywords": [
+    "vu",
+    "meter",
+    "angular",
+    "html5",
+    "css3",
+    "svg"
+  ],
+    "author": {
+        "email": "matteovinci88@gmail.com",
+        "name": "Matteo Vinci"
+    },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matteovinci/angular-vumeter/issues"
+  },
+  "homepage": "https://github.com/matteovinci/angular-vumeter#readme",
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-mocks": "^1.5.8",
+    "clean-css": "^3.4.19",
+    "gulp": "^3.9.1",
+    "jasmine-core": "^2.5.0",
+    "karma": "^1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "^2.1.0",
+    "uglifyjs": "^2.4.10"
+  }
+}
