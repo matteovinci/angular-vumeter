@@ -1,5 +1,5 @@
 /**
- * Gulp task runner settings
+ * Gulp settings
  */
 var gulp = require('gulp');
 
