@@ -1,6 +1,7 @@
 ### angular-vumeter - [AngularJS](http://angularjs.org/) directive representing a VU meter
 [![npm version](https://badge.fury.io/js/angular-vumeter.svg)](https://badge.fury.io/js/angular-vumeter)
 [![Bower version](https://badge.fury.io/bo/angular-vumeter.svg)](https://badge.fury.io/bo/angular-vumeter)
+[![Build Status](https://travis-ci.org/matteovinci/angular-vumeter.svg?branch=master)](https://travis-ci.org/matteovinci/angular-vumeter)
 
 ### Quick links
 - [Demo](#demo)
