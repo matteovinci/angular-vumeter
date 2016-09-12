@@ -145,7 +145,7 @@
             if (navigator.getUserMedia) {
                 navigator.getUserMedia(dictionary, successCallback, errorCallback);
             } else {
-                console.error("getUserMedia not supported by your browser");
+                alert("getUserMedia not supported by your browser");
             }
         }
 

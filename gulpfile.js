@@ -8,8 +8,8 @@ gulp.task('default', function(done) {
     var Server = require('karma').Server;
     new Server({
         configFile: __dirname + '/karma.conf.js',
-        singleRun: false,
-        autoWatch: true,
+        singleRun: true,
+        autoWatch: false,
         browsers : ['PhantomJS']
     }, done).start();
 });
