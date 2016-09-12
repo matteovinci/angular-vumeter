@@ -19,6 +19,10 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "index.html",
+    "javascripts",
+    "params.json",
+    "stylesheets",
     "test",
     "tests",
     "demo"
