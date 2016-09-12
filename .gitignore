@@ -1,0 +1,22 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.DS_store
+
+pids
+logs
+results
+demo/node_modules
+node_modules
+
+npm-debug.log
+*.sublime*
