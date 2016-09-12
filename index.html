@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>Angular-vumeter by matteovinci</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <title>Angular-vumeter by matteovinci</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Angular-vumeter</h1>
-        <h2>A customizable AngularJS directive representing a VU meter</h2>
-        <a href="https://github.com/matteovinci/angular-vumeter" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">Angular-vumeter</h1>
+      <h2 class="project-tagline">A customizable AngularJS directive representing a VU meter</h2>
+      <a href="https://github.com/matteovinci/angular-vumeter" class="btn">View on GitHub</a>
+      <a href="https://github.com/matteovinci/angular-vumeter/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/matteovinci/angular-vumeter/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a id="angular-vumeter---angularjs-directive-representing-a-vu-meter" class="anchor" href="#angular-vumeter---angularjs-directive-representing-a-vu-meter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>angular-vumeter - <a href="http://angularjs.org/">AngularJS</a> directive representing a VU meter</h3>
-
-<p><a href="https://badge.fury.io/js/angular-vumeter"><img src="https://badge.fury.io/js/angular-vumeter.svg" alt="npm version"></a></p>
+    <section class="main-content">
+      <p><a href="https://badge.fury.io/js/angular-vumeter"><img src="https://badge.fury.io/js/angular-vumeter.svg" alt="npm version"></a></p>
 
 <h3>
 <a id="quick-links" class="anchor" href="#quick-links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick links</h3>
@@ -90,8 +78,8 @@
 <h2>
 <a id="including-js-and-css" class="anchor" href="#including-js-and-css" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Including js and css</h2>
 
-<div class="highlight highlight-source-js"><pre>
-</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>../node_modules/angular-vumeter/dist/angular-vumeter.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>link href<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>../node_modules/angular-vumeter/dist/angular-vumeter.min.css<span class="pl-pds">"</span></span> rel<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span></pre></div>
 
 <h2>
 <a id="vu-meter-using-the-microphone-input" class="anchor" href="#vu-meter-using-the-microphone-input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VU meter using the microphone input</h2>
@@ -99,22 +87,22 @@
 <p>By default the vumeter will be active as soon as the page is loaded and it will use microphone as default input.
 You can activate/deactivate VU meter defining the <code>isActive</code> attribute:</p>
 
-<div class="highlight highlight-source-js"><pre></pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>vu<span class="pl-k">-</span>meter is<span class="pl-k">-</span>active<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>isActive<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>vu<span class="pl-k">-</span>meter<span class="pl-k">&gt;</span></pre></div>
 
 <h2>
 <a id="vu-meter-using-an-audio-source" class="anchor" href="#vu-meter-using-an-audio-source" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VU meter using an audio source</h2>
 
-<div class="highlight highlight-source-js"><pre>
-
-
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>vu<span class="pl-k">-</span>meter is<span class="pl-k">-</span>active<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>isActive<span class="pl-pds">"</span></span> source<span class="pl-k">-</span>id<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>mySong<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>vu<span class="pl-k">-</span>meter<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>audio id<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>mySong<span class="pl-pds">"</span></span> controls<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span>source src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./assets/kevin_MacLeod-Slow_Burn.mp3<span class="pl-pds">"</span></span> type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>audio/mpeg<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
     Your browser does not support the audio element.
-</pre></div>
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>audio<span class="pl-k">&gt;</span></pre></div>
 
 <h2>
 <a id="custom-templates" class="anchor" href="#custom-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom templates</h2>
 
 <p>By default the directive will show an svg template. This is inspired to the old analogic VU meter by TEAC corporation.
-You can download the original illustrator file of the svg template and customize it (vumeter.ai)"&gt;<a href="https://matteovinci.github.io/angular-vumeter/demo/assets/vumeter.ai%22%3Evumeter.ai">https://matteovinci.github.io/angular-vumeter/demo/assets/vumeter.ai"&gt;vumeter.ai</a>)</p>
+You can download the original illustrator file of the svg template and customize it (<a href="https://matteovinci.github.io/angular-vumeter/demo/assets/vumeter.ai">vumeter.ai</a>)</p>
 
 <p>Using <code>vuMeterConfig</code> provider you can register a new template with you own logic:</p>
 
@@ -205,24 +193,14 @@ You can download the original illustrator file of the svg template and customize
 <p>Please submit your issue <a href="https://github.com/matteovinci/angular-vumeter/issues/new">here</a>.</p>
 
 <hr>
-        </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/matteovinci/angular-vumeter/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/matteovinci/angular-vumeter/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/matteovinci/angular-vumeter">Angular-vumeter</a> is maintained by <a href="https://github.com/matteovinci">matteovinci</a>.</span>
 
-          <p class="repo-owner"><a href="https://github.com/matteovinci/angular-vumeter"></a> is maintained by <a href="https://github.com/matteovinci">matteovinci</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+    </section>
 
   
   </body>
