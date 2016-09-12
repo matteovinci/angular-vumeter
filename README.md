@@ -17,7 +17,7 @@
 
 # Demo
 
-Do you want to see directives in action? Check out this [demo](https://matteovinci.github.io/angular-vumeter/demo/app/)!
+Do you want to see directives in action? Check out the [demo page](https://matteovinci.github.io/angular-vumeter/demo/app/)!
 
 # Getting started
 
@@ -155,7 +155,7 @@ angular-vumeter uses getUserMediaStream API (check its global support [here](htt
 Modern mobile browsers should work without problems.
 
 ## Found a bug?
-Please submit your issue [here](https://github.com/matteovinci/matteovinci.github.io/issues/new).
+Please submit your issue [here](https://github.com/matteovinci/angular-vumeter/issues/new).
 
 
 ----
