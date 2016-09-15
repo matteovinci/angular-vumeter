@@ -46,6 +46,7 @@
 <a href="#support">Support</a>
 
 <ul>
+<li><a href="#documentation">Documentation</a></li>
 <li><a href="#supported-browsers">Supported browsers</a></li>
 <li><a href="#found-a-bug">Found a bug?</a></li>
 </ul>
@@ -82,8 +83,8 @@
 <h2>
 <a id="including-js-and-css" class="anchor" href="#including-js-and-css" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Including js and css</h2>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>../node_modules/angular-vumeter/dist/angular-vumeter.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span>
-<span class="pl-k">&lt;</span>link href<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>../node_modules/angular-vumeter/dist/angular-vumeter.min.css<span class="pl-pds">"</span></span> rel<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span></pre></div>
+<div class="highlight highlight-source-js"><pre>
+</pre></div>
 
 <h2>
 <a id="vu-meter-using-the-microphone-input" class="anchor" href="#vu-meter-using-the-microphone-input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VU meter using the microphone input</h2>
@@ -91,22 +92,22 @@
 <p>By default the vumeter will be active as soon as the page is loaded and it will use microphone as default input.
 You can activate/deactivate VU meter defining the <code>isActive</code> attribute:</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>vu<span class="pl-k">-</span>meter is<span class="pl-k">-</span>active<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>isActive<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>vu<span class="pl-k">-</span>meter<span class="pl-k">&gt;</span></pre></div>
+<div class="highlight highlight-source-js"><pre></pre></div>
 
 <h2>
 <a id="vu-meter-using-an-audio-source" class="anchor" href="#vu-meter-using-an-audio-source" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VU meter using an audio source</h2>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>vu<span class="pl-k">-</span>meter is<span class="pl-k">-</span>active<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>isActive<span class="pl-pds">"</span></span> source<span class="pl-k">-</span>id<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>mySong<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>vu<span class="pl-k">-</span>meter<span class="pl-k">&gt;</span>
-<span class="pl-k">&lt;</span>audio id<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>mySong<span class="pl-pds">"</span></span> controls<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
-    <span class="pl-k">&lt;</span>source src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./assets/kevin_MacLeod-Slow_Burn.mp3<span class="pl-pds">"</span></span> type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>audio/mpeg<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+<div class="highlight highlight-source-js"><pre>
+
+
     Your browser does not support the audio element.
-<span class="pl-k">&lt;</span><span class="pl-k">/</span>audio<span class="pl-k">&gt;</span></pre></div>
+</pre></div>
 
 <h2>
 <a id="custom-templates" class="anchor" href="#custom-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom templates</h2>
 
 <p>By default the directive will show an svg template. This is inspired to the old analogic VU meter by TEAC corporation.
-You can download the original illustrator file of the svg template and customize it (<a href="https://matteovinci.github.io/angular-vumeter/demo/assets/vumeter.ai">vumeter.ai</a>)</p>
+You can download the original illustrator file of the svg template and customize it (vumeter.ai)"&gt;<a href="https://matteovinci.github.io/angular-vumeter/demo/assets/vumeter.ai%22%3Evumeter.ai">https://matteovinci.github.io/angular-vumeter/demo/assets/vumeter.ai"&gt;vumeter.ai</a>)</p>
 
 <p>Using <code>vuMeterConfig</code> provider you can register a new template with you own logic:</p>
 
@@ -174,6 +175,11 @@ You can download the original illustrator file of the svg template and customize
 
 <h1>
 <a id="support" class="anchor" href="#support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support</h1>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>Check out angular-vumeter documentation <a href="https://matteovinci.github.io/angular-vumeter/docs/build/">here</a></p>
 
 <h2>
 <a id="supported-browsers" class="anchor" href="#supported-browsers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported browsers</h2>
