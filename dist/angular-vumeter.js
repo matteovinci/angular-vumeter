@@ -16,12 +16,29 @@
 
     var module = angular.module('angular-vumeter', ['angular-vumeter.templates']);
 
-    var vuMeterProvider = function() {
+    var vuMeterConfig = function() {
         this.fftSize = 2048;
         this.credits = true;
         this.templates = {};
+
         this.templates['default'] = {
+            /**
+             * @memberOf vuMeterConfig
+             * @ngdoc vuMeterConfig.templateObject
+             * @description Path to the svg/html template
+             * @type {String}
+             * @see {@link vuMeterConfig.registerTemplate}
+             */
             path: 'angular-vumeter/template/angular-vumeter.svg',
+            /**
+             * @memberOf vuMeterConfig
+             * @ngdoc vuMeterConfig.templateObject
+             * @name getTemplateElements
+             * @description Function called once before {@link onUpdate}. Useful to define once all elements that need to be accessed every {@link onUpdate} iteration
+             * @param {Object} $element The angular element for the current angular-vumeter template
+             * @returns {Array}
+             * @see {@link vuMeterConfig.registerTemplate}
+             */
             getTemplateElements: function($element) {
                 // let's find motion elements in svg knowing their types and ids
                 function findElementInSVG(type, id) {
@@ -33,20 +50,31 @@
                         }
                     }
                 }
+
                 // trigger is a g element
                 var trigger = findElementInSVG('g', 'trigger');
                 // peak is a ellipse element
                 var peak = findElementInSVG('ellipse', 'peak');
                 return [angular.element(trigger), angular.element(peak)];
             },
-            onDraw: function($element, volume, templateElements) {
+            /**
+             * @memberOf vuMeterConfig
+             * @ngdoc vuMeterConfig.templateObject
+             * @name onUpdate
+             * @description Function called every 1024 audio sample. Any manipolation of DOM to show audio visualization should be included here
+             * @param {Object} $element The angular element for the current angular-vumeter template
+             * @param {Number} volume Calculated by RMS (Root Mean Square) of the last 1024 audio samples
+             * @param {Array} templateElements elements returned by getTemplateElements (@see getTemplateElements)
+             * @see {@link vuMeterConfig.registerTemplate}
+             */
+            onUpdate: function($element, volume, templateElements) {
                 // this is relative to the original system of coordinates of the template
                 var rotationPivot = {
                     x: 292,
                     y: 331
                 };
 
-                // Let's get template elements calculated only once (not on every onDraw iteration)
+                // Let's get template elements calculated only once (not on every onUpdate iteration)
                 var trigger = templateElements[0];
                 var led = templateElements[1];
 
@@ -69,17 +97,65 @@
                     return;
                 }
 
-                if (!angular.isFunction(template.onDraw)) {
+                if (!angular.isFunction(template.onUpdate)) {
                     template.ondraw = function() { /*noop*/
                     };
-                    console.warn('Template.onDraw callback doesn\'t contain any code. Please be sure to include the custom logic for your template here');
+                    console.warn('Template.onUpdate callback doesn\'t contain any code. Please be sure to include the custom logic for your template here');
                 }
                 return template;
             } else {
-                console.error('Template id ', this.templateId, ' is not a valid templateId');
+                console.error('Template id ', templateId, ' is not a valid templateId');
             }
         };
 
+        /**
+         * @memberOf vuMeterConfig
+         * @name registerTemplate
+         * @ngdoc vuMeterConfig
+         * @description Registers a new angular-vumeter template
+         * @param {String} templateId A unique string to register and retrieve vumeter template
+         * @param {Object} templateObject @see vuMeterConfig.templateObject
+         * @example
+         *  vuMeterConfig.registerTemplate('templateCustomId', {
+         *      path: 'angular-vumeter/template/angular-vumeter.svg',
+         *      getTemplateElements: function() {
+         *          // let's find motion elements in svg knowing their types and ids
+         *          function findElementInSVG(type, id) {
+         *              var elements = $element.find(type);
+         *              for (var i = 0; i < elements.length; i++) {
+         *                  var el = elements[i];
+         *                  if (el.id === id) {
+         *                      return el;
+         *                  }
+         *              }
+         *          }
+         *         // trigger is a g element
+         *         var trigger = findElementInSVG('g', 'trigger');
+         *         // peak is a ellipse element
+         *         var peak = findElementInSVG('ellipse', 'peak');
+         *         return [angular.element(trigger), angular.element(peak)];
+         *      },
+         *      onUpdate: function($element, volume, templateElements) {
+         *          // this is relative to the original system of coordinates of the template
+         *          var rotationPivot = {
+         *              x: 292,
+         *              y: 331
+         *          };
+         *
+         *          // Let's get template elements calculated only once (not on every onUpdate iteration)
+         *          var trigger = templateElements[0];
+         *          var led = templateElements[1];
+         *
+         *          var minAngle = 65, maxAngle = 100;
+         *          // Transform volume in a visual data
+         *          var deg = Math.min((minAngle * volume) / 100, maxAngle);
+         *          // Trigger rotation
+         *          trigger.attr('transform', 'rotate(' + deg + ' ' + rotationPivot.x + ' ' + rotationPivot.y + ')');
+         *          // Led blinking
+         *          led.attr('fill', volume > 100 ? '#ea2b2c' : '#992B2C');
+         *      }
+         *  }
+         */
         this.registerTemplate = function(templateId, templateObject) {
             if (templateId === 'default') {
                 console.error('You can\'t use "default" as templateId. Please use a different templateId');
@@ -89,14 +165,26 @@
             this.templates[templateId] = templateObject;
         };
 
+        /**
+         * @memberOf vuMeterConfig
+         * @name setFFTSize
+         * @ngdoc vuMeterConfig
+         * @param {Number} fft @see {@link https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize}
+         */
         this.setFFTSize = function(fft) {
             if (angular.isNumber(fft)) {
-                this.fft = fft;
+                this.fftSize = fft;
             } else {
-                console.error('fft should be a integer number. Found ', fft);
+                console.error('fft should be a integer number. Found ', fftSize);
             }
         };
 
+        /**
+         * @memberOf vuMeterConfig
+         * @name showCredits
+         * @ngdoc vuMeterConfig
+         * @param {Boolean} enabled Show/hide credits
+         */
         this.showCredits = function(enabled) {
             this.credits = enabled;
         };
@@ -106,7 +194,7 @@
         };
     };
 
-    module.provider('vumeterConfig', vuMeterProvider);
+    module.provider('vumeterConfig', vuMeterConfig);
 
     var VuMeterCtrl = function($scope, $timeout, $interval, vumeterConfig) {
         var audioSource;
@@ -123,13 +211,15 @@
         $scope.onLoad = function() {
             if (angular.isDefined($scope.sourceId)) {
                 var audioElement = document.getElementById($scope.sourceId);
-                audioElement.addEventListener("canplay", function() {
-                    $scope.canPlay = true;
-                    if ($scope.isActive) {
-                        var audioElement = document.getElementById($scope.sourceId);
-                        gotElementStream(audioElement);
-                    }
-                });
+                if (audioElement !== null) {
+                    audioElement.addEventListener("canplay", function() {
+                        $scope.canPlay = true;
+                        if ($scope.isActive) {
+                            var audioElement = document.getElementById($scope.sourceId);
+                            gotElementStream(audioElement);
+                        }
+                    });
+                }
             }
         };
 
@@ -270,7 +360,7 @@
                             contextElement = angular.element(document.getElementById($scope.internalId));
                             elements = angular.isDefined(template.getTemplateElements) ? template.getTemplateElements(contextElement) : [];
                         }
-                        template.onDraw($element, volume, elements);
+                        template.onUpdate($element, volume, elements);
                     };
 
                     if (vumeterConfig.credits) {
@@ -281,5 +371,32 @@
             }
         }
     }];
+    /**
+     * @memberOf vuMeterConfig
+     * @name vumeter
+     * @ngdoc directive
+     * @restrict AE
+     * @attr {String} templateId (Optional) The templateId of a registered template (@see {@link vuMeterConfig.registerTemplate}).
+     * If not defined the default svg vumeter template will be used
+     * @attr {String} sourceId (Optional) The ID of the html audio element. If not defined the microphone will be used as default input
+     * @attr {Boolean} isActive (Optional) Enable or disable the VU meter. Enabled if not defined
+     * @example
+     * <!-- VU meter with microphone input -->
+     * <vumeter></vumeter>
+     *
+     * @example
+     * <!-- VU meter with microphone input enabled/disabled -->
+     * <vu-meter is-active="isActive"></vu-meter>
+     *
+     * @example
+     * <!-- VU meter with other audio sources (mp3, OGG, etc.) -->
+     * <vu-meter is-active="isActive" source-id="mySong"></vu-meter>
+     * <audio id="mySong" controls="true">
+     *     <source src="./assets/kevin_MacLeod-Slow_Burn.mp3" type="audio/mpeg">
+     *     Your browser does not support the audio element.
+     * </audio>
+     *
+     * @see Live demo {@link https://matteovinci.github.io/angular-vumeter/demo/app/}
+     */
     module.directive('vuMeter', VuMeterDirective);
 })(window, window.angular);

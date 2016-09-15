@@ -7,7 +7,8 @@
     "test": "gulp",
     "minify": "npm run minify-js && npm run minify-css",
     "minify-js": "uglifyjs dist/angular-vumeter.js -o dist/angular-vumeter.min.js -m --lint --comments -c",
-    "minify-css": "cleancss -o dist/angular-vumeter.min.css dist/angular-vumeter.css"
+    "minify-css": "cleancss -o dist/angular-vumeter.min.css dist/angular-vumeter.css",
+    "doc": "gulp generate-doc"
   },
   "repository": {
     "type": "git",
@@ -32,10 +33,12 @@
   "homepage": "https://github.com/matteovinci/angular-vumeter#readme",
   "devDependencies": {
     "angular": "^1.5.8",
+    "angular-jsdoc": "^1.4.2",
     "angular-mocks": "^1.5.8",
     "clean-css": "^3.4.19",
-    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
     "jasmine-core": "^2.5.0",
+    "jsdoc": "^3.4.1",
     "karma": "^1.2.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.0.2",

@@ -1,0 +1,14 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+  "plugins": [
+    "node_modules/jsdoc/plugins/markdown",
+    "node_modules/angular-jsdoc/common/plugins/ngdoc"
+  ],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  }
+}

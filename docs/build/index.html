@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Angular-vumeter documentation</title>
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="css/site.css" type="text/css" rel="stylesheet">
+</head>
+<body ng-app="">
+<nav id="toc">
+    <input placeholder="Filter" id="filter-input" class="col12 block field" type="text">
+    <div class="nav-wrapper">
+        <h2><a href="index.html">Home</a></h2>
+        <ul class="module">
+            <!-- vu_eter_onfig -->
+            <h2 class="module">
+                <a chref="" ng-click="modulevu_eter_onfig = !modulevu_eter_onfig">
+                    module: vuMeterConfig
+                </a>
+                <i ng-cloak="" ng-show="modulevu_eter_onfig">+</i>
+            </h2>
+            <li id="vuMeterConfig" ng-hide="modulevu_eter_onfig">
+                <ul class="group">
+                    <h2>
+                        <a href="" ng-click="vu_eter_onfigvuMeterConfig.templateObject = !vu_eter_onfigvuMeterConfig.templateObject">
+                            vuMeterConfig.templateObject
+                        </a>
+                        <i ng-cloak="" ng-show="vu_eter_onfigvuMeterConfig.templateObject">+</i>
+                    </h2>
+                    <ul ng-hide="vu_eter_onfigvuMeterConfig.templateObject">
+                        <li>
+                            <a href="vuMeterConfig.getTemplateElements.html">getTemplateElements</a>
+                        </li><li>
+                            <a href="vuMeterConfig.onUpdate.html">onUpdate</a>
+                        </li><li>
+                            <a href="vuMeterConfig.path.html">path</a>
+                        </li>
+                    </ul>
+                </ul><ul class="group">
+                    <h2>
+                        <a href="" ng-click="vu_eter_onfigvuMeterConfig = !vu_eter_onfigvuMeterConfig">
+                            vuMeterConfig
+                        </a>
+                        <i ng-cloak="" ng-show="vu_eter_onfigvuMeterConfig">+</i>
+                    </h2>
+                    <ul ng-hide="vu_eter_onfigvuMeterConfig">
+                        <li>
+                            <a href="vuMeterConfig.registerTemplate.html">registerTemplate</a>
+                        </li><li>
+                            <a href="vuMeterConfig.setFFTSize.html">setFFTSize</a>
+                        </li><li>
+                            <a href="vuMeterConfig.showCredits.html">showCredits</a>
+                        </li>
+                    </ul>
+                </ul><ul class="group">
+                    <h2>
+                        <a href="" ng-click="vu_eter_onfigdirective = !vu_eter_onfigdirective">
+                            directive
+                        </a>
+                        <i ng-cloak="" ng-show="vu_eter_onfigdirective">+</i>
+                    </h2>
+                    <ul ng-hide="vu_eter_onfigdirective">
+                        <li>
+                            <a href="vuMeterConfig.vumeter.html">vumeter</a>
+                        </li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="content" class="page-wrap">
+    <h1 class="title">
+        Angular-vumeter documentation
+    </h1>
+    <div id="main" class="big-container">
+        <!-- source code html -->
+        <!-- index.html -->
+        <section class="section-readme">
+            <article>
+                <h3>angular-vumeter - <a href="http://angularjs.org/">AngularJS</a> directive representing a VU meter</h3><p><a href="https://badge.fury.io/js/angular-vumeter"><img src="https://badge.fury.io/js/angular-vumeter.svg" alt="npm version"></a>
+<a href="https://badge.fury.io/bo/angular-vumeter"><img src="https://badge.fury.io/bo/angular-vumeter.svg" alt="Bower version"></a>
+<a href="https://travis-ci.org/matteovinci/angular-vumeter"><img src="https://travis-ci.org/matteovinci/angular-vumeter.svg?branch=master" alt="Build Status"></a></p>
+<p><img src="https://matteovinci.github.io/angular-vumeter/demo/assets/vu-meter-demo-preview.png" alt="VU meter demo preview"></p>
+<h3>Quick links</h3><ul>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#installation">Getting started</a><ul>
+<li><a href="#install-with-npm">NPM</a></li>
+<li><a href="#install-with-bower">Bower</a></li>
+<li><a href="#adding-dependency-to-your-project">Adding dependency to your project</a></li>
+<li><a href="#vu-meter-using-the-microphone-input">VU meter using the microphone input</a></li>
+<li><a href="#vu-meter-using-an-audio-source">VU meter using an audio source</a></li>
+<li><a href="#custom-templates">Custom templates</a></li>
+</ul>
+</li>
+<li><a href="#support">Support</a><ul>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#supported-browsers">Supported browsers</a></li>
+<li><a href="#found-a-bug">Found a bug?</a></li>
+</ul>
+</li>
+</ul>
+<h1>Demo</h1><p>Do you want to see directives in action? Check out the <a href="https://matteovinci.github.io/angular-vumeter/demo/app/">demo page</a>!</p>
+<h1>Getting started</h1><h2>Install with NPM</h2><pre class="prettyprint source lang-sh"><code>$ npm install angular-vumeter</code></pre><p>This will install angular-vumeter NPM package.</p>
+<h2>Install with Bower</h2><pre class="prettyprint source lang-sh"><code>$ bower install angular-vumeter</code></pre><h2>Adding dependency to your project</h2><p>When you are done downloading all the dependencies and project files the only remaining part is to add dependencies on the <code>angular-vumeter</code> module:</p>
+<pre class="prettyprint source lang-js"><code>angular.module('myModule', ['angular-vumeter']);</code></pre><h2>Including js and css</h2><pre class="prettyprint source lang-js"><code>&lt;script src=&quot;../node_modules/angular-vumeter/dist/angular-vumeter.min.js&quot;>&lt;/script>
+&lt;link href=&quot;../node_modules/angular-vumeter/dist/angular-vumeter.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;></code></pre><h2>VU meter using the microphone input</h2><p>By default the vumeter will be active as soon as the page is loaded and it will use microphone as default input.
+You can activate/deactivate VU meter defining the <code>isActive</code> attribute:</p>
+<pre class="prettyprint source lang-js"><code>&lt;vu-meter is-active=&quot;isActive&quot;>&lt;/vu-meter></code></pre><h2>VU meter using an audio source</h2><pre class="prettyprint source lang-js"><code>&lt;vu-meter is-active=&quot;isActive&quot; source-id=&quot;mySong&quot;>&lt;/vu-meter>
+&lt;audio id=&quot;mySong&quot; controls=&quot;true&quot;>
+    &lt;source src=&quot;./assets/kevin_MacLeod-Slow_Burn.mp3&quot; type=&quot;audio/mpeg&quot;>
+    Your browser does not support the audio element.
+&lt;/audio></code></pre><h2>Custom templates</h2><p>By default the directive will show an svg template. This is inspired to the old analogic VU meter by TEAC corporation.
+You can download the original illustrator file of the svg template and customize it (<a href="https://matteovinci.github.io/angular-vumeter/demo/assets/vumeter.ai">vumeter.ai</a>)</p>
+<p>Using <code>vuMeterConfig</code> provider you can register a new template with you own logic:</p>
+<pre class="prettyprint source lang-js"><code>vuMeterConfig.registerTemplate('myCustomTemplate', {
+    path: 'path/to/html/or/svg/template',
+    /**
+    * Optional: This method is run only once. Function to find
+    * elements before execution of the onDraw function.
+    * It can be useful to find elements of the template that
+    * need to be accessed multiple times during onDraw
+    */
+    getTemplateElements: function($element) {
+        return [];
+    },
+    /**
+    * Required: This method is run every 1024 audio samples.
+    * Any manipolation of DOM to show audio visualization should be included here
+    */
+    onDraw: function($element, volume, templateElements) {}
+}</code></pre><p>This is the implementation for the default template:</p>
+<pre class="prettyprint source lang-js"><code>{
+    path: 'angular-vumeter/template/angular-vumeter.svg',
+    getTemplateElements: function($element) {
+        // let's find motion elements in svg knowing their types and ids
+        function findElementInSVG(type, id) {
+            var elements = $element.find(type);
+            for (var i = 0; i &lt; elements.length; i++) {
+                var el = elements[i];
+                if (el.id === id) {
+                    return el;
+                }
+            }
+        }
+        // trigger is a g element
+        var trigger = findElementInSVG('g', 'trigger');
+        // peak is a ellipse element
+        var peak = findElementInSVG('ellipse', 'peak');
+        return [angular.element(trigger), angular.element(peak)];
+    },
+    onDraw: function($element, volume, templateElements) {
+        // this is relative to the original system of coordinates of the template
+        var rotationPivot = {
+            x: 292,
+            y: 331
+        };
+        // Let's get template elements calculated only once (not on every onDraw iteration)
+        var trigger = templateElements[0];
+        var led = templateElements[1];
+        var minAngle = 65, maxAngle = 100;
+        // Transform volume in a visual data
+        var deg = Math.min((minAngle * volume) / 100, maxAngle);
+        // Trigger rotation
+        trigger.attr('transform', 'rotate(' + deg + ' ' + rotationPivot.x + ' ' + rotationPivot.y + ')');
+        // Led blinking
+        led.attr('fill', volume > 100 ? '#ea2b2c' : '#992B2C');
+    }
+}</code></pre><p>You can create simpler or more complex audio visualization using html or svg templates</p>
+<h1>Support</h1><h2>Documentation</h2><p>Check documentation <a href="https://matteovinci.github.io/angular-vumeter/docs/build/">here</a>)</p>
+<h2>Supported browsers</h2><p>Directives from this repository are automatically tested with the following browsers:</p>
+<ul>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>Edge</li>
+<li>Opera</li>
+</ul>
+<p>angular-vumeter uses getUserMediaStream API (check its global support <a href="http://caniuse.com/#feat=stream">here</a>)</p>
+<p>Modern mobile browsers should work without problems.</p>
+<h2>Found a bug?</h2><p>Please submit your issue <a href="https://github.com/matteovinci/angular-vumeter/issues/new">here</a>.</p>
+<hr>
+            </article>
+        </section>
+        <!-- class files -->
+    </div>
+    <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+    </footer>
+</div>
+<script src="js/prettify.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/site.js"></script>
+<!--%= prettyJson %-->
+<script>
+    prettyPrint();
+    var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+    lineNo && document.querySelector("ol li:nth-child(" + (lineNo[1]) + ")").scrollIntoView();
+</script>
+</body>
+</html>

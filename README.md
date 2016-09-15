@@ -15,6 +15,7 @@
     - [VU meter using an audio source](#vu-meter-using-an-audio-source)
     - [Custom templates](#custom-templates)
 - [Support](#support)
+    - [Documentation](#documentation)
     - [Supported browsers](#supported-browsers)
     - [Found a bug?](#found-a-bug)
 
@@ -145,6 +146,9 @@ This is the implementation for the default template:
 You can create simpler or more complex audio visualization using html or svg templates
 
 # Support
+
+## Documentation
+Check documentation [here](https://matteovinci.github.io/angular-vumeter/docs/build/))
 
 ## Supported browsers
 

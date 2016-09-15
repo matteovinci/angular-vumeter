@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: registerTemplate</title>
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="css/site.css" type="text/css" rel="stylesheet">
+</head>
+<body ng-app="">
+<nav id="toc">
+    <input placeholder="Filter" id="filter-input" class="col12 block field" type="text">
+    <div class="nav-wrapper">
+        <h2><a href="index.html">Home</a></h2>
+        <ul class="module">
+            <!-- vu_eter_onfig -->
+            <h2 class="module">
+                <a chref="" ng-click="modulevu_eter_onfig = !modulevu_eter_onfig">
+                    module: vuMeterConfig
+                </a>
+                <i ng-cloak="" ng-show="modulevu_eter_onfig">+</i>
+            </h2>
+            <li id="vuMeterConfig" ng-hide="modulevu_eter_onfig">
+                <ul class="group">
+                    <h2>
+                        <a href="" ng-click="vu_eter_onfigvuMeterConfig.templateObject = !vu_eter_onfigvuMeterConfig.templateObject">
+                            vuMeterConfig.templateObject
+                        </a>
+                        <i ng-cloak="" ng-show="vu_eter_onfigvuMeterConfig.templateObject">+</i>
+                    </h2>
+                    <ul ng-hide="vu_eter_onfigvuMeterConfig.templateObject">
+                        <li>
+                            <a href="vuMeterConfig.getTemplateElements.html">getTemplateElements</a>
+                        </li><li>
+                            <a href="vuMeterConfig.onUpdate.html">onUpdate</a>
+                        </li><li>
+                            <a href="vuMeterConfig.path.html">path</a>
+                        </li>
+                    </ul>
+                </ul><ul class="group">
+                    <h2>
+                        <a href="" ng-click="vu_eter_onfigvuMeterConfig = !vu_eter_onfigvuMeterConfig">
+                            vuMeterConfig
+                        </a>
+                        <i ng-cloak="" ng-show="vu_eter_onfigvuMeterConfig">+</i>
+                    </h2>
+                    <ul ng-hide="vu_eter_onfigvuMeterConfig">
+                        <li>
+                            <a href="vuMeterConfig.registerTemplate.html">registerTemplate</a>
+                        </li><li>
+                            <a href="vuMeterConfig.setFFTSize.html">setFFTSize</a>
+                        </li><li>
+                            <a href="vuMeterConfig.showCredits.html">showCredits</a>
+                        </li>
+                    </ul>
+                </ul><ul class="group">
+                    <h2>
+                        <a href="" ng-click="vu_eter_onfigdirective = !vu_eter_onfigdirective">
+                            directive
+                        </a>
+                        <i ng-cloak="" ng-show="vu_eter_onfigdirective">+</i>
+                    </h2>
+                    <ul ng-hide="vu_eter_onfigdirective">
+                        <li>
+                            <a href="vuMeterConfig.vumeter.html">vumeter</a>
+                        </li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="content" class="page-wrap">
+    <h3 style="float:right; color:#ccc">
+        Angular vuMeterConfig
+    </h3>
+    <h1 class="title">
+        registerTemplate
+        <a class="name-link signature-attributes" href="source/vuMeterConfig.registerTemplate.html#line111">source</a>
+    </h1>
+    <div id="main" class="big-container">
+        <!-- source code html -->
+        <!-- index.html -->
+        <!-- class files -->
+        <div>
+            <div><div class="container-overview">
+  <ul class="chips">
+  </ul>
+  <div class="clearfix"></div>
+  <div class="description">
+    <h4>Description</h4>
+    <p>Registers a new angular-vumeter template</p>
+  </div>
+  <div class="details"></div>
+  <div>
+    <h4>Parameters</h4>
+    <table class="params">
+      <thead>
+        <tr><th>Name</th><th>Type</th><th class="last">Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name" nowrap="">
+            <a id="templateId"></a>
+            templateId
+          </td>
+          <td class="type"><span class="param-type">
+            String
+          </span></td>
+          <td class="description last">
+            <span>
+              <p>A unique string to register and retrieve vumeter template</p>
+            </span>
+          </td>
+        </tr><tr>
+          <td class="name" nowrap="">
+            <a id="templateObject"></a>
+            templateObject
+          </td>
+          <td class="type"><span class="param-type">
+            Object
+          </span></td>
+          <td class="description last">
+            <span>
+              <p>@see vuMeterConfig.templateObject</p>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h4>Example</h4>
+    <pre class="prettyprint"><code><span class="str">vuMeterConfig.registerTemplate('templateCustomId', {
+     path: 'angular-vumeter/template/angular-vumeter.svg',
+     getTemplateElements: function() {
+         // let's find motion elements in svg knowing their types and ids
+         function findElementInSVG(type, id) {
+             var elements = $element.find(type);
+             for (var i = 0; i &lt; elements.length; i++) {
+                 var el = elements[i];
+                 if (el.id === id) {
+                     return el;
+                 }
+             }
+         }
+        // trigger is a g element
+        var trigger = findElementInSVG('g', 'trigger');
+        // peak is a ellipse element
+        var peak = findElementInSVG('ellipse', 'peak');
+        return [angular.element(trigger), angular.element(peak)];
+     },
+     onUpdate: function($element, volume, templateElements) {
+         // this is relative to the original system of coordinates of the template
+         var rotationPivot = {
+             x: 292,
+             y: 331
+         };
+         // Let's get template elements calculated only once (not on every onUpdate iteration)
+         var trigger = templateElements[0];
+         var led = templateElements[1];
+         var minAngle = 65, maxAngle = 100;
+         // Transform volume in a visual data
+         var deg = Math.min((minAngle * volume) / 100, maxAngle);
+         // Trigger rotation
+         trigger.attr('transform', 'rotate(' + deg + ' ' + rotationPivot.x + ' ' + rotationPivot.y + ')');
+         // Led blinking
+         led.attr('fill', volume > 100 ? '#ea2b2c' : '#992B2C');
+     }
+ }</span></code></pre>
+  </div>
+</div></div>
+        </div>
+    </div>
+    <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+    </footer>
+</div>
+<script src="js/prettify.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/site.js"></script>
+<!--%= prettyJson %-->
+<script>
+    prettyPrint();
+    var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+    lineNo && document.querySelector("ol li:nth-child(" + (lineNo[1]) + ")").scrollIntoView();
+</script>
+</body>
+</html>
