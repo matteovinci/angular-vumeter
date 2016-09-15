@@ -36,6 +36,7 @@
     "angular-jsdoc": "^1.4.2",
     "angular-mocks": "^1.5.8",
     "clean-css": "^3.4.19",
+    "gulp": "^3.9.1",
     "gulp-shell": "^0.5.2",
     "jasmine-core": "^2.5.0",
     "jsdoc": "^3.4.1",

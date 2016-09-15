@@ -148,7 +148,7 @@ You can create simpler or more complex audio visualization using html or svg tem
 # Support
 
 ## Documentation
-Check documentation [here](https://matteovinci.github.io/angular-vumeter/docs/build/))
+Check documentation [here](https://matteovinci.github.io/angular-vumeter/docs/build/)
 
 ## Supported browsers
 
